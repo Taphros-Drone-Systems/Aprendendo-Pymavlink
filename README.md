@@ -31,6 +31,7 @@ vehicle = pymavlink.mavutil.mavlink_connection(device="udpin:127.0.0.1:14560")
 vehicle.wait_heartbeat(timeout=5)
 
 # debugging messages
-print("Connected to the vehicle")
+if vehicle.target_system==1:
+    print("Connected to the vehicle")
 print("Target system:", vehicle.target_system, "Target component:", vehicle.target_component)
 ````
